@@ -10,3 +10,6 @@
 
 ##### GCD game
 [![asciicast](https://asciinema.org/a/PmQ5pm7Nh7tZCoOSKRDzIXLYN.svg)](https://asciinema.org/a/PmQ5pm7Nh7tZCoOSKRDzIXLYN)
+
+#### Progression game
+[![asciicast](https://asciinema.org/a/n9nHLutYVj41ZdpE2bZRt8J6M.svg)](https://asciinema.org/a/n9nHLutYVj41ZdpE2bZRt8J6M)
