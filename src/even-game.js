@@ -19,6 +19,7 @@ const isEven = (number) => {
     }
 }
 
+
 const playGame = () => {
     const name = getName()
 
