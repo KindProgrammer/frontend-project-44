@@ -1,47 +1,51 @@
 import playGame from "../index.js"
+import randomInteger from "../utils.js"
 
-const addNumbers = () => {
-    const firstNumber = Math.floor(Math.random() * 100)
-    const secondNumber = Math.floor(Math.random() * 100)
+const addNumbers = (firstNumber, secondNumber) => {
     const sum = firstNumber + secondNumber
 
-    return [sum, `${firstNumber} + ${secondNumber}`]
+    return sum
 }
 
-const subtractNumbers = () => {
-    const firstNumber = Math.floor(Math.random() * 100)
-    const secondNumber = Math.floor(Math.random() * 100)
+const subtractNumbers = (firstNumber, secondNumber) => {
     const subtract = firstNumber - secondNumber
 
-    return [subtract, `${firstNumber} - ${secondNumber}`]
+    return subtract
 }
 
-const multiplyNumbers = () => {
-    const firstNumber = Math.floor(Math.random() * 100)
-    const secondNumber = Math.floor(Math.random() * 100)
+const multiplyNumbers = (firstNumber, secondNumber) => {
     const multiply = firstNumber * secondNumber
 
-    return [multiply, `${firstNumber} * ${secondNumber}`]
+    return multiply
 }
 
-const makeExpression = () => {
-    const num = Math.floor(Math.random() * 3)
+const makeQuestionAnswer = () => {
+    const num = randomInteger(0, 3)
+
+    const firstNumber = randomInteger()
+    const secondNumber = randomInteger()
+
+    let rightAnswer
+    let question
 
     switch (num) {
-        case 0: 
-            const addExpression = addNumbers()
-            return addExpression
+        case 0:  
+            rightAnswer = addNumbers(firstNumber, secondNumber)
+            question = `${firstNumber} + ${secondNumber}`
+            return [rightAnswer, question]
         case 1:
-            const subExpression = subtractNumbers()
-            return subExpression
+            rightAnswer = subtractNumbers(firstNumber, secondNumber)
+            question = `${firstNumber} - ${secondNumber}`
+            return [rightAnswer, question]
         case 2:
-            const multExpression = multiplyNumbers()
-            return multExpression
+            rightAnswer = multiplyNumbers(firstNumber, secondNumber)
+            question = `${firstNumber} * ${secondNumber}`
+            return [rightAnswer, question]
     }
 }
 
 const rule = 'What is the result of the expression?'
 
 export default () => {
-    playGame(makeExpression, rule)
+    playGame(makeQuestionAnswer, rule)
 }
