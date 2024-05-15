@@ -1,51 +1,51 @@
-import playGame from "../index.js"
-import randomInteger from "../utils.js"
+import playGame from "../index.js";
+import randomInteger from "../utils.js";
 
 const addNumbers = (firstNumber, secondNumber) => {
-    const sum = firstNumber + secondNumber
+  const sum = firstNumber + secondNumber;
 
-    return sum
-}
+  return sum;
+};
 
 const subtractNumbers = (firstNumber, secondNumber) => {
-    const subtract = firstNumber - secondNumber
+  const subtract = firstNumber - secondNumber;
 
-    return subtract
-}
+  return subtract;
+};
 
 const multiplyNumbers = (firstNumber, secondNumber) => {
-    const multiply = firstNumber * secondNumber
+  const multiply = firstNumber * secondNumber;
 
-    return multiply
-}
+  return multiply;
+};
 
 const makeQuestionAnswer = () => {
-    const num = randomInteger(0, 3)
+  const num = randomInteger(0, 3);
 
-    const firstNumber = randomInteger()
-    const secondNumber = randomInteger()
+  const firstNumber = randomInteger();
+  const secondNumber = randomInteger();
 
-    let rightAnswer
-    let question
+  let rightAnswer;
+  let question;
 
-    switch (num) {
-        case 0:  
-            rightAnswer = addNumbers(firstNumber, secondNumber)
-            question = `${firstNumber} + ${secondNumber}`
-            return [rightAnswer, question]
-        case 1:
-            rightAnswer = subtractNumbers(firstNumber, secondNumber)
-            question = `${firstNumber} - ${secondNumber}`
-            return [rightAnswer, question]
-        case 2:
-            rightAnswer = multiplyNumbers(firstNumber, secondNumber)
-            question = `${firstNumber} * ${secondNumber}`
-            return [rightAnswer, question]
-    }
-}
+  switch (num) {
+    case 0:
+      rightAnswer = addNumbers(firstNumber, secondNumber);
+      question = `${firstNumber} + ${secondNumber}`;
+      return [rightAnswer, question];
+    case 1:
+      rightAnswer = subtractNumbers(firstNumber, secondNumber);
+      question = `${firstNumber} - ${secondNumber}`;
+      return [rightAnswer, question];
+    case 2:
+      rightAnswer = multiplyNumbers(firstNumber, secondNumber);
+      question = `${firstNumber} * ${secondNumber}`;
+      return [rightAnswer, question];
+  }
+};
 
-const rule = 'What is the result of the expression?'
+const rule = "What is the result of the expression?";
 
 export default () => {
-    playGame(makeQuestionAnswer, rule)
-}
+  playGame(makeQuestionAnswer, rule);
+};
