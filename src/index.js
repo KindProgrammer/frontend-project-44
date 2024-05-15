@@ -14,7 +14,12 @@ const playGame = (questionAnswerFunc, rule) => {
 
     let i = 0
     while (i < 3) {
-        const questionAnswer = questionAnswerFunc()
+        let questionAnswer = questionAnswerFunc()
+
+        while (!questionAnswer) {
+            questionAnswer = questionAnswerFunc()
+        }
+
         const rightAnswer = String(questionAnswer[0])
         const question = questionAnswer[1]
 
