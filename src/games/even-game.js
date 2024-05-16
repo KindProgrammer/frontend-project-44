@@ -1,27 +1,26 @@
-import playGame from "../index.js"
+import playGame from '../index.js';
 
 const makeNumber = () => {
-    const number = Math.floor(Math.random() * 100)
-    return number
-}
+  const number = Math.floor(Math.random() * 100);
+  return number;
+};
 
 const isEven = (number) => {
-    if (number % 2 === 0) {
-        return 'yes'
-    } else {
-        return 'no'
-    }
-}
+  if (number % 2 === 0) {
+    return 'yes';
+  }
+  return 'no';
+};
 
 const makeQuestionAnswer = () => {
-    const question = makeNumber()
-    const rightAnswer = isEven(question)
+  const question = makeNumber();
+  const rightAnswer = isEven(question);
 
-    return [rightAnswer, question]
-}
+  return [rightAnswer, question];
+};
 
-const rule = 'Answer "yes" if the number is even, otherwise answer "no".'
+const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export default () => {
-    playGame(makeQuestionAnswer, rule)
-}
+  playGame(makeQuestionAnswer, rule);
+};

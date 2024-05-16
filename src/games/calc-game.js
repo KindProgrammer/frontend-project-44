@@ -1,5 +1,5 @@
-import playGame from "../index.js";
-import randomInteger from "../utils.js";
+import playGame from '../index.js';
+import randomInteger from '../utils.js';
 
 const addNumbers = (firstNumber, secondNumber) => {
   const sum = firstNumber + secondNumber;
@@ -37,14 +37,14 @@ const makeQuestionAnswer = () => {
       rightAnswer = subtractNumbers(firstNumber, secondNumber);
       question = `${firstNumber} - ${secondNumber}`;
       return [rightAnswer, question];
-    case 2:
+    default:
       rightAnswer = multiplyNumbers(firstNumber, secondNumber);
       question = `${firstNumber} * ${secondNumber}`;
       return [rightAnswer, question];
   }
 };
 
-const rule = "What is the result of the expression?";
+const rule = 'What is the result of the expression?';
 
 export default () => {
   playGame(makeQuestionAnswer, rule);
