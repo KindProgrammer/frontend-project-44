@@ -32,16 +32,18 @@ const makeQuestionAnswer = () => {
     case 0:
       rightAnswer = addNumbers(firstNumber, secondNumber);
       question = `${firstNumber} + ${secondNumber}`;
-      return [rightAnswer, question];
+      break;
     case 1:
       rightAnswer = subtractNumbers(firstNumber, secondNumber);
-      question = `${firstNumber} - ${secondNumber}`;
-      return [rightAnswer, question];
+      question = `${firstNumber} + ${secondNumber}`;
+      break;
     default:
       rightAnswer = multiplyNumbers(firstNumber, secondNumber);
       question = `${firstNumber} * ${secondNumber}`;
-      return [rightAnswer, question];
+      break;
   }
+
+  return [rightAnswer, question];
 };
 
 const rule = 'What is the result of the expression?';
