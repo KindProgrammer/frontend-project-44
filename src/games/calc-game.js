@@ -35,7 +35,7 @@ const makeQuestionAnswer = () => {
       break;
     case 1:
       rightAnswer = subtractNumbers(firstNumber, secondNumber);
-      question = `${firstNumber} + ${secondNumber}`;
+      question = `${firstNumber} - ${secondNumber}`;
       break;
     default:
       rightAnswer = multiplyNumbers(firstNumber, secondNumber);
