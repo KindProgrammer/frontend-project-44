@@ -1,4 +1,5 @@
 import playGame from '../index.js';
+import randomInteger from '../utils.js';
 
 const getGcd = (n, m) => {
   if (m !== 0) {
@@ -9,8 +10,8 @@ const getGcd = (n, m) => {
 };
 
 const makeGcdNumbers = () => {
-  const firstNumber = Math.floor(Math.random() * 100);
-  const secondNumber = Math.floor(Math.random() * 100);
+  const firstNumber = randomInteger();
+  const secondNumber = randomInteger();
 
   const rightAnswer = getGcd(firstNumber, secondNumber);
   const question = `${firstNumber} ${secondNumber}`;

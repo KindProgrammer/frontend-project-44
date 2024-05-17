@@ -1,7 +1,8 @@
 import playGame from '../index.js';
+import randomInteger from '../utils.js';
 
 const makeNumber = () => {
-  const number = Math.floor(Math.random() * 100);
+  const number = randomInteger();
   return number;
 };
 

@@ -1,8 +1,9 @@
 import playGame from '../index.js';
+import randomInteger from '../utils.js';
 
 const makeProgression = () => {
-  const startProgression = Math.floor(Math.random() * 100);
-  const stepProgression = Math.floor(Math.random() * 5) + 1;
+  const startProgression = randomInteger();
+  const stepProgression = randomInteger(1, 5);
 
   const progression = [];
   let step = 0;
@@ -15,7 +16,7 @@ const makeProgression = () => {
 };
 
 const hideElement = (listProgression) => {
-  const hiddenElement = Math.floor(Math.random() * listProgression.length);
+  const hiddenElement = randomInteger(0, listProgression.length);
 
   const hidden = listProgression[hiddenElement];
   const withHidden = listProgression.slice();

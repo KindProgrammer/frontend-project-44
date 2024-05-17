@@ -1,4 +1,5 @@
 import playGame from '../index.js';
+import randomInteger from '../utils.js';
 
 const isPrime = (checkedNumber) => {
   if (checkedNumber === 2) {
@@ -18,7 +19,7 @@ const isPrime = (checkedNumber) => {
 };
 
 const makeQuestionAnswer = () => {
-  const question = Math.floor(Math.random() * 100) + 2;
+  const question = randomInteger(2);
   const rightAnswer = isPrime(question);
 
   return [rightAnswer, question];
