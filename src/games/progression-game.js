@@ -16,7 +16,7 @@ const makeProgression = () => {
 };
 
 const hideElement = (listProgression) => {
-  const hiddenElement = randomInteger(0, listProgression.length);
+  const hiddenElement = randomInteger(0, listProgression.length - 1);
 
   const hidden = listProgression[hiddenElement];
   const withHidden = listProgression.slice();
