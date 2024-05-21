@@ -3,24 +3,24 @@ import randomInteger from '../utils.js';
 
 const isPrime = (checkedNumber) => {
   if (checkedNumber === 2) {
-    return 'yes';
+    return true;
   }
 
   let i = 2;
   const limit = Math.floor(checkedNumber / 2);
   while (i <= limit) {
     if (checkedNumber % i === 0) {
-      return 'no';
+      return false;
     }
     i += 1;
   }
 
-  return 'yes';
+  return true;
 };
 
 const makeQuestionAnswer = () => {
   const question = randomInteger(2);
-  const rightAnswer = isPrime(question);
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
 
   return [rightAnswer, question];
 };
