@@ -13,7 +13,7 @@ export const playGame = (questionAnswerFunc, rule) => {
   console.log(rule);
 
   for (let i = 0; i < 3; i += 1) {
-    let questionAnswer = questionAnswerFunc();
+    const questionAnswer = questionAnswerFunc();
 
     const rightAnswer = String(questionAnswer[0]);
     const question = questionAnswer[1];
