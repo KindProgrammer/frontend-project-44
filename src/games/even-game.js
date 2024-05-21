@@ -1,4 +1,4 @@
-import playGame from '../index.js';
+import { playGame } from '../index.js';
 import randomInteger from '../utils.js';
 
 const isEven = (number) => {
