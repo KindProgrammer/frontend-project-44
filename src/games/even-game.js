@@ -1,21 +1,16 @@
 import playGame from '../index.js';
 import randomInteger from '../utils.js';
 
-const makeNumber = () => {
-  const number = randomInteger();
-  return number;
-};
-
 const isEven = (number) => {
   if (number % 2 === 0) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
 const makeQuestionAnswer = () => {
-  const question = makeNumber();
-  const rightAnswer = isEven(question);
+  const question = randomInteger();
+  const rightAnswer = isEven(question) ? 'yes' : 'no';
 
   return [rightAnswer, question];
 };
