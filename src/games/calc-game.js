@@ -1,26 +1,17 @@
 import playGame from '../index.js';
 import randomInteger from '../utils.js';
 
-const addNumbers = (firstNumber, secondNumber) => {
-  const sum = firstNumber + secondNumber;
-
-  return sum;
-};
-
-const subtractNumbers = (firstNumber, secondNumber) => {
-  const subtract = firstNumber - secondNumber;
-
-  return subtract;
-};
-
-const multiplyNumbers = (firstNumber, secondNumber) => {
-  const multiply = firstNumber * secondNumber;
-
-  return multiply;
+const makeExpression = (operator, firstNumber, secondNumber) => {
+  switch (operator) {
+    case '-': return firstNumber - secondNumber;
+    case '+': return firstNumber + secondNumber;
+    default: return firstNumber * secondNumber;
+  }
 };
 
 const makeQuestionAnswer = () => {
-  const num = randomInteger(0, 3);
+  const index = randomInteger(0, 3);
+  const operators = ['-', '+', '*'];
 
   const firstNumber = randomInteger();
   const secondNumber = randomInteger();
@@ -28,17 +19,17 @@ const makeQuestionAnswer = () => {
   let rightAnswer;
   let question;
 
-  switch (num) {
-    case 0:
-      rightAnswer = addNumbers(firstNumber, secondNumber);
+  switch (operators[index]) {
+    case '+':
+      rightAnswer = makeExpression('+', firstNumber, secondNumber);
       question = `${firstNumber} + ${secondNumber}`;
       break;
-    case 1:
-      rightAnswer = subtractNumbers(firstNumber, secondNumber);
+    case '-':
+      rightAnswer = makeExpression('-', firstNumber, secondNumber);
       question = `${firstNumber} - ${secondNumber}`;
       break;
     default:
-      rightAnswer = multiplyNumbers(firstNumber, secondNumber);
+      rightAnswer = makeExpression('*', firstNumber, secondNumber);
       question = `${firstNumber} * ${secondNumber}`;
       break;
   }
