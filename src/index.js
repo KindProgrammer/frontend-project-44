@@ -12,8 +12,8 @@ const playGame = (questionAnswerFunc, rule) => {
   console.log(`Hello, ${name}!`);
   console.log(rule);
 
-  let i = 0;
-  while (i < 3) {
+
+  for (let i = 0; i < 3; i += 1) {
     let questionAnswer = questionAnswerFunc();
 
     const rightAnswer = String(questionAnswer[0]);
@@ -27,7 +27,6 @@ const playGame = (questionAnswerFunc, rule) => {
       return;
     }
     console.log('Correct!');
-    i += 1;
   }
 
   console.log(`Congratulations, ${name}!`);
