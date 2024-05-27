@@ -12,7 +12,7 @@ export const playGame = (questionAnswerFunc, rule) => {
   console.log(`Hello, ${name}!`);
   console.log(rule);
 
-  const roundAmount = 3
+  const roundAmount = 3;
 
   for (let i = 0; i < roundAmount; i += 1) {
     const questionAnswer = questionAnswerFunc();
