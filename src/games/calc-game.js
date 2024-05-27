@@ -5,13 +5,14 @@ const makeExpression = (operator, firstNumber, secondNumber) => {
   switch (operator) {
     case '-': return firstNumber - secondNumber;
     case '+': return firstNumber + secondNumber;
-    default: return firstNumber * secondNumber;
+    case '*': return firstNumber * secondNumber;
+    default: throw new Error(`Illegal operator ${operator}`)
   }
 };
 
 const makeQuestionAnswer = () => {
-  const index = randomInteger(0, 3);
   const operators = ['-', '+', '*'];
+  const index = randomInteger(0, operators.length - 1);
 
   const firstNumber = randomInteger();
   const secondNumber = randomInteger();
@@ -19,20 +20,8 @@ const makeQuestionAnswer = () => {
   let rightAnswer;
   let question;
 
-  switch (operators[index]) {
-    case '+':
-      rightAnswer = makeExpression('+', firstNumber, secondNumber);
-      question = `${firstNumber} + ${secondNumber}`;
-      break;
-    case '-':
-      rightAnswer = makeExpression('-', firstNumber, secondNumber);
-      question = `${firstNumber} - ${secondNumber}`;
-      break;
-    default:
-      rightAnswer = makeExpression('*', firstNumber, secondNumber);
-      question = `${firstNumber} * ${secondNumber}`;
-      break;
-  }
+  rightAnswer = makeExpression(operators[index], firstNumber, secondNumber);
+  question = `${firstNumber} ${operators[index]} ${secondNumber}`;
 
   return [rightAnswer, question];
 };
